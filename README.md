@@ -1,14 +1,15 @@
-# zynthian-salamander-grand: Accurate Salamander Grand for Zynthian
+# Accurate Salamander Grand for Zynthian
 
-The piano was a Yamaha C5 with MIDI control, allowing automated sampling.
-Sampling was done by Alexander Holm in 2010.  It has every third note sampled
-and 16 velocity layers.  Subsequently the Accurate Salamander Grand project
-by C Yamauchi perfected the tuning and dynamic response (see link above.)
+This is a high-quality sampleset from a Yamaha C5 with MIDI control,
+allowing automated sampling.  Sampling was done by Alexander Holm in 2010.
+It has every third note sampled and 16 velocity layers.  Subsequently the
+Accurate Salamander Grand project by C Yamauchi perfected the tuning and
+dynamic response (see link above.)
 
 This sampleset is minimized to reduce filespace footprint and minimize the
 number of voices used, suitable for use on Zynthian, but not limited to it.
 All note samples were retained, but release samples and resonance samples
-were removed.
+were removed.  More details on changes below.
 
 It has been tested using Sforzando and Sfizz sample players.
 
@@ -36,10 +37,12 @@ see README.orig.txt for details.
 The following changes were made:
 
 - This sampleset is based on the "minimal" sampleset of Accurate Grand, which doesn't
-  include hammer noise, pedal noise, etc. -- just the notes. But pedal noise was added back.
+  include release samples, hammer noise, resonance samples, and pedal noise. But pedal
+  noise was added back.
 - Files were converted from 24 to 16 bits.  Since these samples are normalized,
-  this loses very little fidelity and saves considerable space.
-- Files were converted from wav format to flac lossless, saving considerable space.
+  this loses very little fidelity and saves considerable space, especially after FLAC
+  data compression.
+- Files were converted from wav format to FLAC lossless, saving considerable space.
 - Release times were adjusted to be shorter with higher notes, as on a real piano.
 - Half-pedaling support was enabled.
 
