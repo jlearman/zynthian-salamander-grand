@@ -1,11 +1,11 @@
-title: "Accurate Salamander Grand Piano v6.2beta2 Zynth"
+title: "Accurate Salamander Grand for Zynthian"
 icon: "Art/accurate_salamander_zynth.png"
 author: "Chisato Yamauchi; Samples from Alexander Holm"
 license: "CC-BY"
 source_url: "https://github.com/jlearman/zynthian-salamander-grand.git"
 size: "200MB"
 content: "soundfonts (sfz)"
-description: "Accurate Salamander Grand 6.2beta2 tailored for Zynthian.
+description: "Accurate Salamander Grand tailored for Zynthian.
 
 The Accurate Salamander Project has remastered existing sample sets to produce new Grand Piano soundbanks (SFZ) of instrument maker-level quality. It uses a physics-based approach,  thoroughly pursuing the 'homogeneity' and 'continuity' of volume, overtone, envelope, and delay, which are directly related to ease of control and important for performers who handle delicate expressions.
 
