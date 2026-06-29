@@ -2,7 +2,8 @@
 
 DST_DIR="$ZYNTHIAN_DATA_DIR/soundfonts/sfz/Pianos"
 DIRNAME="Zynthian Salamander Grand"
-DOWNLOAD_URL="https://github.com/jlearman/zynthian-salamander-grand/archive/refs/heads/main.zip"
+REPO="zynthian-salamander-grand"
+DOWNLOAD_URL="https://github.com/jlearman/$REPO/archive/refs/heads/main.zip"
 
 do_install() {
     set -ex
@@ -11,8 +12,8 @@ do_install() {
     wget -q "$DOWNLOAD_URL"
     unzip -q "main.zip"
     rm -rf "main.zip"
-    rm -rf "zynthian-salamander-grand-main/package"
-    mv "zynthian-salamander-grand-main" "Zynthian Salamander Grand"
+    rm -rf "$REPO-main/package"
+    mv "$REPO-main" "$DIRNAME"
     set +x
     echo "installed"
 }
