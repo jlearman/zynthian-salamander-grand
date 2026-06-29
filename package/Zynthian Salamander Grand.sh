@@ -1,22 +1,18 @@
 #!/bin/bash
 
-DST_DIR="$ZYNTHIAN_DATA_DIR/soundfonts/sfz/Pianos/Zynthian Salamander Grand"
-# DST_DIR="/tmp/j2/Zynthian Salamander Grand" #### TESTING ONLY
+DST_DIR="$ZYNTHIAN_DATA_DIR/soundfonts/sfz/Pianos"
+DIRNAME="Zynthian Salamander Grand"
 DOWNLOAD_URL="https://github.com/jlearman/zynthian-salamander-grand/archive/refs/heads/main.zip"
-PKG_NAME="zynthian-salamander-grand"
-TMP_DIR=$(mktemp -d)
-
-trap 'rm -rf "$TMP_DIR"' EXIT
 
 do_install() {
     set -ex
-    mkdir -p "$TMP_DIR" || ( echo "Can't make temp dir $TMP_DIR"; exit 1)
-    wget --directory-prefix "$TMP_DIR" -q "$DOWNLOAD_URL"
-    unzip -q "$TMP_DIR/main.zip" -d "$TMP_DIR"
-    rm -rf "$DST_DIR"
     mkdir -p "$DST_DIR"
-    rm -f "$TMP_DIR/package"
-    mv "$TMP_DIR"/$PKG_NAME/* "$DST_DIR"
+    cd $DST_DIR
+    wget -q "$DOWNLOAD_URL"
+    unzip -q "main.zip"
+    rm -rf "main.zip"
+    rm -rf "zynthian-salamander-grand-main/package"
+    mv "zynthian-salamander-grand-main" "Zynthian Salamander Grand"
     set +x
     echo "installed"
 }
@@ -31,7 +27,7 @@ do_uninstall() {
 }
 
 is_installed() {
-    if [[ -d "$DST_DIR" ]]; then
+    if [[ -d "$DST_DIR/$DIRNAME" ]]; then
         echo "installed"
     else
         echo "not installed"
